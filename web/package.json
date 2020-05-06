@@ -10,7 +10,8 @@
     "setupFiles": ["./setup-jest.js"]
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:c": "jest --collect-coverage"
   },
   "author": "",
   "license": "ISC",

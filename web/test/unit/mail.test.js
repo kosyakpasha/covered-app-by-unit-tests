@@ -60,10 +60,9 @@ describe('Test password', () => {
 
     app.init();
 
-    password1.trigger('change');
     password2.trigger('change');
 
-    expect(password1.css('border-color')).toBe(validColor);
+    expect(password2.css('border-color')).toBe(validColor);
   });
 
   test('Passwords are different', () => {
@@ -72,10 +71,9 @@ describe('Test password', () => {
 
     app.init();
 
-    password1.trigger('change');
     password2.trigger('change');
 
-    expect(password1.css('border-color')).toBe(invalidColor);
+    expect(password2.css('border-color')).toBe(invalidColor);
   });
 });
 
@@ -125,7 +123,6 @@ describe('Test submit', () => {
     app.init();
 
     login.trigger('change');
-    password1.trigger('change');
     password2.trigger('change');
 
     $.post = jest.spyOn(jQuery, "ajax").mockImplementation(function(url, serializeFn, callback) {
