@@ -1,0 +1,15 @@
+module.exports = {
+    host: 'http://localhost:3000',
+    siteTitle: 'Legacy Application',
+    validColor: 'border-color: rgb(0, 204, 0);',
+    invalidColor: 'border-color: rgb(204, 0, 0);',
+    submit: '#submit',
+    login: '#login',
+    password1: '#password1',
+    password2: '#password2',
+    body: 'body',
+    validLogin: 'valid_login',
+    invalidLogin: 'john.doe',
+    validPassword: 'valid_password',
+    invalidPassword: 'invalid_password',
+};
