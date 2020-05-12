@@ -14,7 +14,9 @@
   "scripts": {
     "test": "jest",
     "test:c": "jest --collect-coverage",
-    "e2e": "node nightwatch.js test/e2e --env selenium.chrome"
+    "e2e": "npm run e2e:chrome && npm run e2e:firefox",
+    "e2e:chrome": "node nightwatch.js test/e2e --env chrome",
+    "e2e:firefox": "node nightwatch.js test/e2e --env firefox"
   },
   "author": "",
   "license": "ISC",
@@ -27,7 +29,6 @@
     "@babel/preset-env": "^7.9.6",
     "chromedriver": "^81.0.0",
     "geckodriver": "^1.19.1",
-    "iedriver": "^3.14.2",
     "jest": "^25.5.4",
     "nightwatch": "^1.3.5",
     "selenium-server": "^3.141.59"

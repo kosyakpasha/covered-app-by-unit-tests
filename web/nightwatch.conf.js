@@ -1,29 +1,27 @@
 module.exports = {
     src_folders: ["test/e2e"],
-  
-    test_settings: {  
+
+    test_settings: {
       default: {
-        launch_url: 'https://nightwatchjs.org'
+        launch_url: 'http://localhost:3000'
       },
 
       selenium: {
-        // Selenium Server is running locally and is managed by Nightwatch
         selenium: {
           start_process: true,
           port: 4444,
           server_path: require('selenium-server').path,
           cli_args: {
-            //'webdriver.gecko.driver': require('geckodriver').path,
+            'webdriver.gecko.driver': require('geckodriver').path,
             'webdriver.chrome.driver': require('chromedriver').path,
-            // 'webdriver.ie.driver': process.platform === 'win32' ? require('iedriver').path : ''
           }
         },
         webdriver: {
           start_process: false,
         }
       },
-  
-      'selenium.chrome': {
+
+      'chrome': {
         extends: 'selenium',
         desiredCapabilities: {
           browserName: 'chrome',
@@ -32,19 +30,12 @@ module.exports = {
           }
         }
       },
-  
-    //   'selenium.firefox': {
-    //     extends: 'selenium',
-    //     desiredCapabilities: {
-    //       browserName: 'firefox'
-    //     }
-    //   },
-  
-    //   'selenium.ie': {
-    //     extends: 'selenium',
-    //     desiredCapabilities: {
-    //       browserName: 'internet explorer'
-    //     }
-    //   }
+
+      'firefox': {
+        extends: 'selenium',
+        desiredCapabilities: {
+          browserName: 'firefox'
+        }
+      }
     }
-  }
+  };
